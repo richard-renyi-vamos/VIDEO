@@ -1,0 +1,34 @@
+import webview
+
+def play_youtube_video(video_id):
+    html = f'''
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                body {{
+                    margin: 0;
+                    overflow: hidden;
+                }}
+                iframe {{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }}
+            </style>
+        </head>
+        <body>
+            <iframe src="https://www.youtube.com/embed/{video_id}" frameborder="0" allowfullscreen></iframe>
+        </body>
+        </html>
+    '''
+
+    webview.create_window('YouTube Player', html=html, width=800, height=600)
+
+if __name__ == '__main__':
+    video_id = input("Enter YouTube video ID: ")
+    play_youtube_video(video_id)
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
