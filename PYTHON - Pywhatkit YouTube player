@@ -1,0 +1,15 @@
+import pywhatkit
+
+def play_azure_videos():
+    search_query = 'Azure tutorials'  # Modify the search query as per your requirement
+
+    try:
+        pywhatkit.playonyt(search_query)
+        print(f"Playing YouTube videos related to '{search_query}'...")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+if __name__ == "__main__":
+    play_azure_videos()
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
