@@ -1,0 +1,28 @@
+import pygame
+
+def play_video(file_path):
+    pygame.init()
+
+    # Set the display dimensions to match the video resolution
+    video = pygame.movie.Movie(file_path)
+    screen = pygame.display.set_mode(video.get_size())
+    pygame.display.set_caption("TV Channel Player")
+
+    video.play()
+
+    # Main loop for video playback
+    while video.get_busy():
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                video.stop()
+                pygame.quit()
+                return
+
+    pygame.quit()
+
+if __name__ == "__main__":
+    # Replace 'path_to_video_file' with the actual path to your video file
+    video_file_path = "path_to_video_file"
+    play_video(video_file_path)
+
+# CREATED WITH THE HELP OF OPEN-AI CHAT GPT: https://chat.openai.com/chat
